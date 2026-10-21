@@ -1,0 +1,491 @@
+
+:root {
+    --primary: #071A35;
+    --primary-dark: #10294B;
+    --background: #071A35;
+    --surface: #071A35;
+    --surface-hover: #10294B;
+    --text: #FFFFFF;
+    --muted: #CBD5E1;
+    --border: #263B58;
+    --success: #22C55E;
+    --danger: #DC2626;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    min-height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: var(--text);
+    background: #071A35;
+    line-height: 1.5;
+}
+
+body {
+    min-height: 100vh;
+}
+
+a {
+    color: #93C5FD;
+}
+
+a:hover {
+    color: #FFFFFF;
+}
+
+/* Main application layout */
+.app-layout {
+    display: flex;
+    min-height: 100vh;
+    background: #071A35;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 245px;
+    flex-shrink: 0;
+    background: #071A35;
+    color: #FFFFFF;
+    border-right: 1px solid var(--border);
+    padding: 24px 16px;
+}
+
+/* Brand section */
+.brand {
+    padding: 0 10px 22px;
+    border-bottom: 1px solid var(--border);
+}
+
+.brand h2 {
+    margin: 0;
+    color: #FFFFFF;
+    font-size: 23px;
+}
+
+.brand p,
+.topbar p {
+    margin: 5px 0 0;
+    color: var(--muted);
+}
+
+/* Sidebar navigation */
+.navigation {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-top: 22px;
+}
+
+.navigation a,
+.sidebar .nav-link {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 13px;
+    color: #CBD5E1;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.navigation a:hover,
+.navigation a.active,
+.sidebar .nav-link:hover,
+.sidebar .nav-link.active {
+    color: #FFFFFF;
+    background: #10294B;
+}
+
+/* Main content and page background */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    min-height: 100vh;
+    padding: 28px;
+    background: #071A35;
+    color: #FFFFFF;
+}
+
+/* Top header */
+.topbar {
+    margin-bottom: 24px;
+    background: #071A35;
+    color: #FFFFFF;
+}
+
+.topbar h1 {
+    margin: 0;
+    font-size: 27px;
+    color: #FFFFFF;
+}
+
+/* Page content container */
+.page-content {
+    background: #071A35;
+    color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 24px;
+}
+
+/* Dashboard cards */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
+
+.card {
+    background: #10294B;
+    color: #FFFFFF;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.card h1,
+.card h2,
+.card h3,
+.card h4,
+.card h5,
+.card h6 {
+    color: #FFFFFF;
+}
+
+.card p {
+    color: #CBD5E1;
+}
+
+/* Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 18px;
+    color: #FFFFFF;
+    background: #071A35;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+th {
+    background: #10294B;
+    color: #FFFFFF;
+    font-weight: 600;
+}
+
+td {
+    color: #E2E8F0;
+}
+
+tbody tr {
+    background: #071A35;
+}
+
+tbody tr:hover {
+    background: #10294B;
+}
+
+/* Forms */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #52647D;
+    border-radius: 5px;
+    font: inherit;
+    margin-top: 5px;
+    background: #10294B;
+    color: #FFFFFF;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #A9B8CC;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #93C5FD;
+    box-shadow: 0 0 0 2px rgba(147, 197, 253, 0.15);
+}
+
+select option {
+    background: #10294B;
+    color: #FFFFFF;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: 600;
+    color: #FFFFFF;
+}
+
+/* Buttons */
+button,
+.btn {
+    display: inline-block;
+    padding: 10px 15px;
+    border: 1px solid #52647D;
+    border-radius: 5px;
+    background: #10294B;
+    color: #FFFFFF;
+    text-decoration: none;
+    cursor: pointer;
+    font: inherit;
+    transition: background 0.2s ease;
+}
+
+button:hover,
+.btn:hover {
+    background: #1A3A61;
+    color: #FFFFFF;
+}
+
+.btn-primary {
+    background: #10294B;
+    color: #FFFFFF;
+    border-color: #52647D;
+}
+
+.btn-primary:hover {
+    background: #1A3A61;
+}
+
+.btn-danger {
+    background: #DC2626;
+    border-color: #DC2626;
+    color: #FFFFFF;
+}
+
+.btn-danger:hover {
+    background: #B91C1C;
+}
+
+/* Alerts */
+.alert {
+    padding: 12px 15px;
+    margin-bottom: 18px;
+    border-radius: 5px;
+}
+
+.alert-success {
+    background: #123B2A;
+    color: #86EFAC;
+    border: 1px solid #166534;
+}
+
+.alert-error,
+.alert-danger {
+    background: #451A1A;
+    color: #FCA5A5;
+    border: 1px solid #991B1B;
+}
+
+.alert-warning {
+    background: #422D12;
+    color: #FDE68A;
+    border: 1px solid #92400E;
+}
+
+.alert-info {
+    background: #122D4D;
+    color: #BFDBFE;
+    border: 1px solid #1D4ED8;
+}
+
+/* Muted text */
+.text-muted {
+    color: var(--muted) !important;
+}
+
+small {
+    color: var(--muted);
+}
+
+/* Logout button */
+.logout-form {
+    margin-top: 20px;
+}
+
+.logout-button {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    padding: 11px 13px;
+    border: none;
+    border-radius: 6px;
+    background: #991B1B;
+    color: #FFFFFF;
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.logout-button:hover {
+    background: #B91C1C;
+}
+
+/* Sidebar navigation icons */
+.sidebar .nav-link svg,
+.sidebar .navigation a svg {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    fill: none !important;
+    stroke: #93C5FD !important;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Active and hovered navigation icons */
+.sidebar .nav-link.active svg,
+.sidebar .nav-link:hover svg,
+.sidebar .navigation a.active svg,
+.sidebar .navigation a:hover svg {
+    stroke: #FFFFFF !important;
+}
+
+/* Logout icon */
+.sidebar .logout-button svg {
+    width: 19px;
+    height: 19px;
+    stroke: #FCA5A5 !important;
+}
+
+.sidebar .logout-button:hover svg {
+    stroke: #FFFFFF !important;
+}
+
+/* Plumbing POS brand icon */
+.sidebar .brand-logo {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    background-color: #1D4ED8;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar .brand-logo svg {
+    width: 27px !important;
+    height: 27px !important;
+    min-width: 27px;
+    fill: none !important;
+    stroke: #FFFFFF !important;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* User avatar */
+.sidebar .user-avatar {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #10294B;
+}
+
+.sidebar .user-avatar svg {
+    width: 26px !important;
+    height: 26px !important;
+    min-width: 26px;
+    fill: none !important;
+    stroke: #93C5FD !important;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* Pagination */
+.pagination .page-link {
+    background: #10294B;
+    color: #FFFFFF;
+    border-color: var(--border);
+}
+
+.pagination .page-item.active .page-link {
+    background: #1D4ED8;
+    border-color: #1D4ED8;
+    color: #FFFFFF;
+}
+
+/* Dropdowns */
+.dropdown-menu {
+    background: #10294B;
+    border: 1px solid var(--border);
+}
+
+.dropdown-item {
+    color: #FFFFFF;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    background: #1A3A61;
+    color: #FFFFFF;
+}
+
+/* Ensure common content wrappers remain navy */
+.content,
+.content-wrapper,
+.page-wrapper,
+.container,
+.container-fluid,
+main {
+    background-color: #071A35;
+    color: #FFFFFF;
+}
+
+/* Responsive layout */
+@media (max-width: 800px) {
+    .app-layout {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .navigation {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .main-content {
+        padding: 16px;
+    }
+
+    .page-content {
+        padding: 15px;
+        overflow-x: auto;
+    }
+
+    .card-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+}
